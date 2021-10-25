@@ -31,6 +31,39 @@
             <li>git remote -v -잘 연결됬는지 확인 </li>
             <li>git push origin master -업로드 </li>
         </ul>
+        <ul>
+            <li>상대방 클론 복사해서 수정완료되면 새로운 파일을 만들어서 저장는 방법</li>
+            <li>
+                pc00@pc08 MINGW64 /d/aaa/newproject (master)
+                <!-- $ git add . 추가하기 -->
+                
+                pc00@pc08 MINGW64 /d/aaa/newproject (master)
+                <!-- $ git commit -m "newproject first"  -->
+                On branch master
+                Your branch is up to date with 'origin/master'.
+                
+                nothing to commit, working tree clean
+                
+                pc00@pc08 MINGW64 /d/aaa/newproject (master)
+                <!-- $ git checkout -b newproject   브런치 뉴프로젝트만들어주기 -->
+                Switched to a new branch 'newproject'
+                
+                pc00@pc08 MINGW64 /d/aaa/newproject (newproject)
+                <!-- $ git add .    파일추가하기 -->
+                
+                pc00@pc08 MINGW64 /d/aaa/newproject (newproject)
+                <!-- $ git commit -m "newproject firstm" -->
+                On branch newproject
+                nothing to commit, working tree clean
+                
+                pc00@pc08 MINGW64 /d/aaa/newproject (newproject)
+                <!-- $ git push origin newproject -->
+                remote: Permission to cjh7652/project.git denied to ikjoon25.
+                fatal: unable to access 'https://github.com/cjh7652/project.git/': The requested URL returned error: 403
+                
+                pc00@pc08 MINGW64 /d/aaa/newproject (newproject)
+                $</li>
+        </ul>
     </main>
 </body>
 </html>
