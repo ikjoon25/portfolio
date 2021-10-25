@@ -1,0 +1,260 @@
+/*** 화면상단 이동 ***/
+function moveTop() {
+    $('html, body').animate({ scrollTop : 0 }, 400);
+    return false;
+}
+/*** 갤러리 리스트 이미지 100%로 채우기 ***/
+function imgAutoFit(class_name) {
+    var $div = $(class_name);
+    var boxWidth = $div.find('.img').width();
+    var boxHeight = $div.find('.img').height();
+    var boxRatio = boxWidth/boxHeight;
+    
+    $div.find('li').each(function() {
+        var imgW = $(this).find('img').width();
+        var imgH = $(this).find('img').height();
+        var imgRatio = imgW/imgH;
+        
+        if(imgRatio >= boxRatio) {
+            $(this).find('.img').addClass('ui-landscape');
+        } else {
+            $(this).find('.img').addClass('ui-portrait');
+        }
+    });
+}
+/*** 모바일용 이미지 핀치줌 : 이미지 Src를 href로 넘기기 ***/
+function imgPinchZoom() {
+    $('.js-img-viwer').each(function() {
+        var imgSrc = $(this).find('img').attr('src');
+        $(this).attr('href', imgSrc)
+    });
+}
+
+$(document).ready(function(){
+    /*** 화면 확대/축소 ***/
+    var nowZoom = 100; //파폭오페라뭐든지 줌인줌아웃
+    var size = 1; 
+    $('.btn-zoomin').on('click',function(){
+        zoomIn();
+        $('body').addClass('ui-header-fix-remove'); //IE에서 position:fixed일때 zoom속성이 적용되지 않아 이를 해결하기 위함.
+        return false; 
+    });
+    $('.btn-zoomset').on('click',function(){
+        zoomReset();
+        $('body').removeClass('ui-header-fix-remove'); //IE에서 position:fixed일때 zoom속성이 적용되지 않아 이를 해결하기 위함.
+        return false; 
+    });
+    $('.btn-zoomout').on('click',function(){
+        zoomOut();
+        $('body').addClass('ui-header-fix-remove'); //IE에서 position:fixed일때 zoom속성이 적용되지 않아 이를 해결하기 위함.
+        return false; 
+    });
+    function zoomOut() {
+        nowZoom = nowZoom - 10;
+        size = size - 0.05;
+        zooms();
+    }
+    function zoomIn() {
+        nowZoom = nowZoom + 10;
+        size = size + 0.05;
+        zooms();
+    }
+    function zoomReset() {
+        nowZoom = 100;
+        size = 1;
+        zooms();
+        $('body').attr('style', '');
+        $('body footer').css('position', 'relative');
+    }
+    function zooms() {
+        //document.body.style.zoom = nowZoom + '%'; //for ie9 under
+        $('body').css('-webkit-transform','scale(' + (size) + ')');
+        $('body').css('-webkit-transform-origin','0 0');
+        $('body').css('-moz-transform','scale(' + (size) + ')');
+        $('body').css('-moz-transform-origin','0 0');
+        $('body').css('-o-transform','scale(' + (size) + ')');
+        $('body').css('-o-transform-origin','0 0');
+        $('body').css('-ms-transform','scale(' + (size) + ')');
+        $('body').css('-ms-transform-origin','0 0');
+    }
+    
+    /*** 화면상단 이동 ***/
+    $('.top').on('click', function() {
+        moveTop();
+    });
+    
+    /*** 전체메뉴 열기/닫기 ***/
+    $('.navbar-menu .navbar-toggle').on('click', function() {
+        $(this).toggleClass('collapsed', function() {
+            if($(this).hasClass('collapsed')) {
+                $(this).children('span').text('전체메뉴 닫기');
+            } else {
+                $(this).children('span').text('전체메뉴 열기');
+            }
+        });
+        $('.navbar-menu .navbar-collapse').toggleClass('in');
+        $('html').toggleClass('ui-show-menu-wrap');
+        $('body').toggleClass('ui-show-menu');
+        moveTop();
+    });
+    
+    /*** 검색영역 열기/닫기 ***/
+    $('.navbar-menu .search-toggle').on('click', function() {
+        $(this).toggleClass('collapsed', function() {
+            if($(this).hasClass('collapsed')) {
+                $(this).children('span').text('검색영역 닫기');
+            } else {
+                $(this).children('span').text('검색영역 열기');
+            }
+        });
+    });
+    
+    /*** 탭갯수가 6개가 넘어가면 줄바꿈을 위한 클래스 추가 ***/
+    $(".nav.nav-tabs").each(function() {
+        var liCount = $(this).children("li").size();
+        if(liCount > 6) {
+            $(this).addClass("ui-multi-line");
+        }
+    });
+    
+    /*** 탭을 중앙으로 정렬하기 위한 클래스 추가 ***/
+    $(".nav.nav-tabs.align-center").each(function() {
+        $(this).parent().addClass("align-center");
+    });
+    
+    /*** 전체메뉴에 문구를 넣기 위한 html 추가 ***/
+    $('.navbar-menu .navbar-collapse').append('<div class="ui-catchphrase"><span>가장 <strong>안전한</strong> 나라, <br/>존경과<strong>사랑받는</strong> 경찰</span></div>');
+    
+    /*** 좌측메뉴 활성화 처리 ***/
+    $('.left-menu .list-group').find('.active').parents('li').addClass('active').parents('ul').addClass('active');
+    $('.left-menu .list-group li').siblings('li').addClass('ui-has-siblings');
+    $('.left-menu .list-group li').find('ul').parents('li').addClass('ui-has-child');
+    //$('.left-menu .list-group li.active').parent("ul").prepend('<div class="ui-mask-btn"></div>');
+    /*텍스트 토글처리*/
+    $.fn.extend({
+        toggleText: function(a, b) {
+            var that = this;
+            if(that.text() != a && that.text() != b) {
+                that.text(a);
+            } else if(that.text() == a) {
+                that.text(b);
+            } else if(that.text() == b) {
+                that.text(a);
+            }
+            return this;
+        }
+    });
+    $('.left-menu .ui-mask-btn').click(function(event) {
+        event.stopPropagation();
+        $(this).parent("ul").toggleClass('ui-expand');
+        $(this).toggleText('메뉴펼치기', '메뉴접기');
+    });
+    $('.left-menu .ui-mask-btn').focus(function(event) {
+        event.stopPropagation();
+        $(this).parent("ul").addClass('ui-focus');
+    });
+    $('.left-menu .ui-mask-btn').focusout(function(event) {
+        event.stopPropagation();
+        $(this).parent("ul").removeClass('ui-focus');
+    });
+    
+    $('.accorWarp .accorItem *').on('click', function() {
+        if($(this).parents('.accorItem').children('.question').hasClass('on')) {
+            $(this).parents('.accorItem').find('a img').attr('alt', '리스트 펼치기');
+        } else {
+            $(this).parent('.accorItem').find('a img').attr('alt', '리스트 접기');
+        }
+    });
+    
+    /*** 페이지 타이틀에 description이 있는 경우를 위한 처리 ***/
+    if($('.contents .row *').hasClass('title-descript')) {
+        $('.page-header').addClass('ui-has-title-descript');
+    }
+    
+    /*** 랜덤 이미지(visual) ***/
+    var subVisualObj = {
+        1:['ui-sub-visual-img1', '<strong>열린 행정</strong>으로 시민과 <strong>함께하는</strong><br>따뜻한 <strong>경찰</strong>이 되겠습니다'],
+        /*2:['ui-sub-visual-img2', '<strong>경찰</strong>이 곧 <strong>시민</strong>이고<br><strong>시민</strong>이 곧 <strong>경찰</strong>입니다']*/
+    };
+    var subVisualArray = $.map(subVisualObj, function(value, index) {
+        return[value];
+    });
+    var visualRndCoef = Math.round(Math.random() * (subVisualArray.length - 1));
+    $('.sub-visual').addClass(subVisualArray[visualRndCoef][0]);
+    $('.sub-visual span').html(subVisualArray[visualRndCoef][1]);
+    
+    /*** 메인페이지 자주찾는서비스/열린행정 List Show Hide ***/
+    $('.list-tab').on('click', function() {
+        if(!$(this).parent('.list').hasClass('active')) {
+            $(this).parent('.list').siblings('.list').removeClass('active');
+            $(this).parent('.list').addClass('active');
+        }
+    });
+    
+    // 이미지 로딩이 늦는 경우 계산오류가 발생할 수 있음. 이럴 경우엔 Delay를 늘려줘야 함.
+    var initImgAutoFit = setTimeout(function() {
+        imgAutoFit('.imgAutoFit'); //이미지 Ratio 맞추기
+        imgAutoFit('.useful-info'); //메인페이지 유용한정보 이미지 Ratio 맞추기
+        imgAutoFit('.campaign'); //메인페이지 유용한정보 이미지 Ratio 맞추기
+        imgAutoFit('.gallery-list'); //갤러리 리스트 이미지 Ratio 맞추기
+        imgAutoFit('.memorial-detail'); //추모관 상세페이지 이미지 Ratio 맞추기
+        imgAutoFit('.ruins-list'); //순례길 코스이미지 Ratio 맞추기
+    }, 500);
+    initImgAutoFit;
+    
+    /*** Description + Search Condition 인 경우 디자인 수정 ***/
+    var descParent = $('.description.word-break').parents('.row').addClass('ui-has-descript');
+    var descName = $('.ui-has-descript.row .col-md-12').children().last();
+    if(descName.hasClass('description') === true) {
+        $('.ui-has-descript.row').addClass('ui-descript-next-search');
+    }
+    
+    /*** 순례길 탭을 위한 처리 ***/
+    $('.nav-tabs.ruins-tabs').parents('.col-md-12').addClass('align-center');
+    
+    /*** BreadCrumb ***/
+    $('.breadcrumb').parents('.row').addClass('ui-has-breadcrumb');
+    /*** 버튼그룹 wrapping 클래스 추가 ***/
+    $('.col-sm-12.btn-group').parent('.row').addClass('btn-group-wrap');
+    
+    /*** Modal 팝업 열고/닫기 ***/
+    function compareSize() {
+        var winW = $(window).width();
+        var winH = $(window).height();
+        var popID = $('.popup-wrap .popup.popup-show').attr('id');
+        var popW = $('#'+ popID).width();
+        var popH = $('#'+ popID).height();
+        
+        if((popW >= winW)||(popH >= winH)) {
+            $('.popup-wrap').addClass('popup-scroll');
+        } else if((popW < winW)&&(popH < winH)) {
+            $('.popup-wrap').removeClass('popup-scroll');
+        }
+    }
+    $('.popup_open2[href]').on('click', function() {
+        $('body').append('<div class="modal-bg"></div>');
+        var popID = $(this).attr('href');
+        $('html').addClass('popup-show');
+        $(''+ popID +'').addClass('popup-show');
+        $(''+ popID +'').parent('.popup-wrap').addClass('popup-show');
+        compareSize();
+    });
+    $('.popup-wrap .popup .pop_close').on('click', function() {
+        $('html').removeClass('popup-show');
+        $('.modal-bg').remove();
+        $('.popup-wrap .popup').removeClass('popup-show');
+        $('.popup-wrap').removeClass('popup-show');
+    });
+    $(window).resize(function() {
+        compareSize();
+    });
+    
+    imgPinchZoom(); //모바일용 이미지 핀치줌 : 이미지 Src를 href로 넘기기
+
+    //웹호환성 수정 START
+    $('.left-menu .container > div > div > a').bind("click", function(event) {
+        event.stopPropagation();
+        $(this).parent().toggleClass('top_menu_on');
+    });
+    //웹호환성 수정 END 
+});

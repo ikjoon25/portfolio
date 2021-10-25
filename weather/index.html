@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script>
+        $(function(){
+            $.getJSON('https://api.openweathermap.org/data/2.5/weather?id=1835848&appid=4c1960b3f4de11bec95f3618508f2f58&units=metric', function(data){
+                let maxTemp=data.main.temp_max;
+                let minTemp=data.main.temp_min;
+                let temp=data.main.temp;
+                let icon=data.weather[0].icon;
+                let now=new Date();
+                let week=new Array('일','월','화','수','목','금','토')
+                let dayName=week[now.getDay()];
+                let curDate=now.getFullYear()+'/'+(now.getMonth()+1)+'/'+now.getDate()+'/'+dayName+'요일';
+                //console.log(curDate)
+                $('.curTemp').append(temp);
+                $('.curLowTemp').append(minTemp);
+                $('.curHightTemp').append(maxTemp);
+                $('h2').prepend(curDate);
+                $('.curIcon').append('<img src="http://openweathermap.org/img/wn/' + icon + '@2x.png"/>')
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>weather api</h1>
+    <h2>-현재 날씨</h2>
+    <div class="curTemp">현재온도 : </div>
+    <div class="curLowTemp">최저온도 : </div>
+    <div class="curHightTemp">최고온도 : </div>
+    <div class="curIcon">아이콘 : </div>
+</body>
+</html>
+
+
+

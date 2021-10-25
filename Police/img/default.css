@@ -1,0 +1,366 @@
+@charset "utf-8"; 
+/****** Reset CSS ******/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+body {line-height:1;}
+ol, ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content:''; content:none;}
+table {border-collapse:collapse; border-spacing:0;}
+
+/****** Fonts CSS ******/
+@font-face {
+	font-family:'NotoSansL';
+	font-style:normal;
+	font-weight:normal;
+	font-stretch:condensed;
+	src:url(../font/NotoSansKR-DemiLight-Hestia.eot);
+	src:local('※'),
+        url(../font/NotoSansKR-DemiLight-Hestia.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSansKR-DemiLight-Hestia.woff) format('woff');
+}
+@font-face {
+	font-family:'NotoSansR';
+	font-style:normal;
+	font-weight:400;
+	font-stretch:condensed;
+	src:url(../font/NotoSansKR-Regular-Hestia.eot);
+	src:local('※'),
+        url(../font/NotoSansKR-Regular-Hestia.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSansKR-Regular-Hestia.woff) format('woff');
+}
+@font-face {
+	font-family:'NotoSansM';
+	font-style:normal;
+	font-weight:500;
+	font-stretch:condensed;
+	src:url(../font/NotoSansKR-Medium-Hestia.eot);
+	src:local('※'),
+        url(../font/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSansKR-Medium-Hestia.woff) format('woff');
+}
+@font-face {
+	font-family:'NotoSansB';
+	font-style:normal;
+	font-weight:700;
+	font-stretch:condensed;
+	src:url(../font/NotoSansKR-Bold-Hestia.eot);
+	src:local('※'),
+        url(../font/NotoSansKR-Bold-Hestia.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSansKR-Bold-Hestia.woff) format('woff');
+}
+@font-face {
+	font-family:'NanumMyeongjo';
+	font-weight:normal;
+	font-stretch:condensed;
+	src:url(../font/NanumMyeongjo.eot);
+	src:local('※'),
+       url(../font/NanumMyeongjo.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumMyeongjo.woff) format('woff');
+}
+@font-face {
+	font-family:'NanumMyeongjoB';
+	font-weight:normal;
+	font-stretch:condensed;
+	src:url(../font/NanumMyeongjoBold.eot);
+	src:local('※'),
+       url(../font/NanumMyeongjoBold.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumMyeongjoBold.woff) format('woff');
+}
+@font-face {
+	font-family:'NanumSquareR';
+	font-weight:normal;
+	font-stretch:condensed;
+	src:url(../font/NanumSquareR.eot);
+	src:local('※'),
+       url(../font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumSquareR.woff) format('woff');
+}
+@font-face {
+	font-family:'NanumSquareB';
+	font-weight:700;
+	font-stretch:condensed;
+	src:url(../font/NanumSquareB.eot);
+	src:local('※'),
+       url(../font/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumSquareB.woff) format('woff');
+}
+@font-face {
+	font-family:'NanumSquareEB';
+	font-weight:900;
+	font-stretch:condensed;
+	src:url(../font/NanumSquareEB.eot);
+	src:local('※'),
+       url(../font/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumSquareEB.woff) format('woff');
+}
+@font-face {
+	font-family:'NanumBrush';
+	src:url(../font/NanumBrush.eot);
+	src:url(../font/NanumBrush.eot?#iefix) format('embedded-opentype'),
+		url(../font/NanumBrush.woff) format('woff'),
+		url(../font/NanumBrush.ttf) format('truetype');
+}
+@font-face {
+	font-family:'Recipekorea';
+	font-weight:normal;
+	font-style:normal;
+	src:url(../font/Recipekorea.woff) format('woff');
+}
+
+/****** Bootstrap Reset ******/
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
+.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
+.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {padding-left:0; padding-right:0;}
+.col-xs-12:after {
+	content:""; display:block; clear:both;
+}
+.row {margin-left:0; margin-right:0;}
+.form-group {display:block; margin:0; vertical-align:middle;}
+.form-horizontal .form-group {margin:0;}
+.form-control,
+.form-inline {display:inline-block; border-radius:0; border:none; box-shadow:none; line-height:inherit; vertical-align:middle;}
+form.form-inline {width:100%;}
+.checkbox-inline,
+.radio-inline {margin-left:10px; margin-right:10px;}
+.checkbox-inline:first-child,
+.radio-inline:first-child,
+.checkbox-inline+.checkbox-inline,
+.radio-inline+.radio-inline {margin-left:0;}
+.btn-group .btn+.btn,
+.btn-group .btn+.btn-group,
+.btn-group .btn-group+.btn,
+.btn-group .btn-group+.btn-group {margin-left:0;}
+.container {padding-left:0; padding-right:0; margin-left:auto; margin-right:auto;}
+@media (min-width:1200px) {
+	.container {width:1200px;}
+}
+.table>thead>tr>th {border-bottom:none; vertical-align:middle;}
+
+/****** Default CSS ******/
+body {font-size:15px; font-family:'NotoSansL'; line-height:1.5; color:#313131;}
+ol, ul, dl {list-style:none;}
+em {font-style:normal;}
+a {color:#004fa8; text-decoration:underline;}
+a[target=_blank]:after {content:""; display:inline-block; width:18px; height:18px; background:url(../images/ico_popup.png) no-repeat center 3px; vertical-align:middle;}
+button {cursor:pointer;}
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {outline:1px dotted red !important;}
+/* Placeholder Font Color */
+::placeholder {color:#bdbdbd;}
+:-ms-input-placeholder {color:#bdbdbd;}
+::-ms-input-placeholder {color:#bdbdbd;}
+label {vertical-align:middle;}
+input[type=text],
+input[type=password] {height:40px; padding-left:10px; padding-right:10px; border:1px solid #d2d2d2; font-size:14px; box-sizing:border-box; vertical-align:middle;}
+select,
+select[size="1"],
+select.select,
+select.form-control {
+	width:150px; height:40px; padding:6px 20px 6px 10px; border:1px solid #d2d2d2;
+	-webkit-appearance:none; -moz-appearance:none; appearance:none; /* 네이티브 화살표 감추기 */
+	background:#fff url(../images/select_bg.png) no-repeat right 15px; /* 화살표 모양 이미지 */
+	font-size:14px; box-sizing:border-box; vertical-align:middle;
+}
+input[type=checkbox],
+input[type=radio] {width:18px; height:18px; margin-top:3px; border:1px solid #c3c3c3;}
+input.datepicker {width:133px; background:#fff url(../images/ico_calendar.png) no-repeat right center;}
+input.datepicker[readonly] {background-color:#fff;}
+select[disabled],
+.form-control[disabled],
+fieldset[disabled] .form-control {cursor:not-allowed; opacity:.55;}
+/* IE10, 11의 네이티브 화살표 감추기 */
+select::-ms-expand {display:none;}
+/* Datepicker */
+.datepicker-liquid {width:100%;}
+.datepicker-icon-trigger {padding:7px 30px 7px 9px;}
+.ui-datepicker-trigger {position:absolute; right:15px; bottom:0; background-color:#65B688; padding:7px; cursor:pointer;}
+.ui-datepicker-trigger:hover {background-color:#D65C4F;}
+.ui-datepicker .ui-state-hover {background-color:#65B688; color:#fff;}
+.ui-datepicker .ui-datepicker-current-day .ui-state-active {background-color:#D65C4F; color:#fff;}
+.ui-datepicker .ui-state-disabled {color:#999;}
+.ui-datepicker {width:auto!important; display:none; z-index:10;}
+.ui-datepicker .ui-datepicker-header {position:relative; background-color:#3A4B55; color:#fff; font-weight:400; border-radius:2px 2px 0 0; -webkit-border-radius:2px 2px 0 0; -moz-border-radius:2px 2px 0 0;}
+.date-trigger .ui-datepicker-trigger {margin-left:6px; cursor:pointer;}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {position:absolute; padding:9px 16px; cursor:pointer; top:0; background-repeat:no-repeat; border-radius:0; -webkit-border-radius:0; -moz-border-radius:0;}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {background-color:#65B688;}
+.ui-datepicker .ui-datepicker-next-hover {border-radius:0 2px 0 0; -webkit-border-radius:0 2px 0 0; -moz-border-radius:0 2px 0 0;}
+.ui-datepicker .ui-datepicker-prev-hover {border-radius:2px 0 0 0; -webkit-border-radius:2px 0 0 0; -moz-border-radius:2px 0 0 0;}
+.ui-datepicker .ui-datepicker-prev {background-image:url(../images/interface/arrow_left.png); background-position:14px 14px; left:0;}
+.ui-datepicker .ui-datepicker-next {background-image:url(../images/interface/arrow_right.png); right:0; background-position:14px 14px;}
+.ui-datepicker .ui-datepicker-title {margin:0 33px; padding:11px 0 12px 0; text-align:center; font-size:12px;}
+.ui-datepicker table {width:100%; font-size:11px; border-collapse:collapse; background-color:#fff; border:1px solid #DDD; border-top:0;}
+.ui-datepicker-append {margin-left:14px; font-size:11px;}
+.no-append .ui-datepicker-append {display:none;}
+.datepicker-liquid > .ui-datepicker {width:100%;}
+.datepicker-fixed {width:20em;}
+.ui-datepicker th {padding:12px 6px 10px 6px; text-align:center; font-weight:600; border:0;}
+.ui-datepicker td {border:0; padding:1px; text-align:center;}
+.ui-datepicker td span, .ui-datepicker td a {display:block; padding:7px 10px; text-align:center; text-decoration:none; line-height:16px; font-weight:600;}
+.ui-datepicker.ui-datepicker-multi {width:auto; margin-left:2px;}
+.ui-datepicker-multi .ui-datepicker-group {float:left; margin-left:1px;}
+.ui-datepicker-multi .ui-datepicker-group:first-child {margin-left:-2px;}
+.ui-datepicker-multi-2 .ui-datepicker-group {width:50%;}
+.ui-datepicker-multi-3 .ui-datepicker-group {width:33.3333333333%;}
+.ui-datepicker-multi-4 .ui-datepicker-group {width:25%;}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {border-left-width:0;}
+.ui-datepicker-multi .ui-datepicker-buttonpane {clear:left;}
+.ui-datepicker-row-break {clear:both; width:100%; font-size:0;}
+.ui-datepicker .ui-icon {display:block; text-indent:-99999px; overflow:hidden; background-repeat:no-repeat;}
+@media (max-width:479px) {
+	.ui-datepicker-multi-3 .ui-datepicker-group {width:auto;}
+}
+textarea,
+textarea.form-control {resize:none; display:block; width:100%; height:80px; padding:5px 10px; border:1px solid #d2d2d2; font-size:14px; box-sizing:border-box;}
+fieldset {width:100%;}
+fieldset legend,
+table caption,
+.blind,
+.hidden {position:absolute; display:block; left:-9999px; display:block !important;}
+.fl, .float-left {float:left;}
+.fr, .float-right {float:right;}
+.clearfix {display:block; clear:both;}
+.al, .align-left {text-align:left !important;}
+.ac, .align-center {text-align:center !important;}
+.ar, .align-right {text-align:right !important;}
+.text-ellips {text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.word-break {white-space:normal; word-break:keep-all; word-wrap:break-word;}
+a.js-img-viwer {position:relative; display:block;}
+a.js-img-viwer:after {
+	content:'';
+	position:absolute;
+	top:5px;
+	right:5px;
+	display:block;
+	width:22px;
+	height:22px;
+	background:#000 url(../images/ico_zoom.png) no-repeat center center; background-size:100% auto;
+	opacity:.75;
+}
+a.js-img-viwer img {max-width:100%;}
+/* 버튼 구성 */
+.btn {min-width:50px; height:40px; border-radius:0; padding:9px 12px; text-decoration:none;}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {opacity:.55;}
+.btn.btn-big {min-width:236px; height:46px; padding:9px 12px; font-size:16px;}
+.btn.btn-default, .btn.btn-default[disabled],
+.btn.btn-success, .btn.btn-success[disabled] {border-color:#c2c2c2; background-color:#fff; color:#414141;}
+.btn.btn-white {border-color:#767d83; background-color:#fff; color:#000;}
+.btn.btn-primary {border-color:#767d83; background-color:#767d83; color:#fff;}
+.btn.btn-info {border-color:#004fa8; background-color:#004fa8; color:#fff;}
+.btn.btn-empha {border-color:#0080c2; background-color:#0080c2; color:#fff;}
+.btn.btn-search,
+.btn.btn-download {position:relative; padding-left:34px;}
+.btn.btn-search:before,
+.btn.btn-download:before {content:""; position:relative; display:inline-block; width:20px; height:20px; margin-left:-22px; background:url(../images/btn_sprite.png) no-repeat -2px -2px; vertical-align:middle;}
+.btn.btn-download:before {background:url(../images/ico_download1.png) no-repeat 0 0;}
+.btn.btn-big.btn-search:before,
+.btn.btn-big.btn-download:before {margin-bottom:1px; margin-right:1px;}
+.btn-group-vertical>.btn, .btn-group>.btn {float:none;}
+a.btn[target=_blank]:after {display:none;}
+.search-condition a.btnType02,
+.search-condition a.btnType03,
+.search-condition a.btnTypeLarge {display:inline-block;}
+/* 첨부파일 아이콘 */
+.glyphicon.glyphicon-file {text-indent:-9999px;}
+.glyphicon.glyphicon-file.ico-file:before,
+.glyphicon.glyphicon-file.ico-download:before,
+.glyphicon.glyphicon-file.ico-viewer:before,
+.glyphicon.glyphicon-file.ico-jpg:before,
+.glyphicon.glyphicon-file.ico-gif:before,
+.glyphicon.glyphicon-file.ico-png:before,
+.glyphicon.glyphicon-file.ico-hwp:before,
+.glyphicon.glyphicon-file.ico-xls:before,
+.glyphicon.glyphicon-file.ico-doc:before,
+.glyphicon.glyphicon-file.ico-ppt:before,
+.glyphicon.glyphicon-file.ico-pdf:before,
+.glyphicon.glyphicon-file.ico-zip:before {display:none;}
+.glyphicon.glyphicon-file.ico-file {width:20px; height:20px; background:url(../images/ico_file.png) no-repeat center center;}
+.glyphicon.glyphicon-file.ico-download {width:20px; height:20px; background:url(../images/ico_download.png) no-repeat center center;}
+.glyphicon.glyphicon-file.ico-viewer {width:20px; height:20px; background:url(../images/ico_zoom1.png) no-repeat center center;}
+.glyphicon.glyphicon-file.ico-jpg {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -2px -2px;}
+.glyphicon.glyphicon-file.ico-gif {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -26px -2px;}
+.glyphicon.glyphicon-file.ico-png {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -50px -2px;}
+.glyphicon.glyphicon-file.ico-hwp {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -74px -2px;}
+.glyphicon.glyphicon-file.ico-xls {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -98px -2px;}
+.glyphicon.glyphicon-file.ico-doc {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -122px -2px;}
+.glyphicon.glyphicon-file.ico-ppt {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -146px -2px;}
+.glyphicon.glyphicon-file.ico-pdf {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -170px -2px;}
+.glyphicon.glyphicon-file.ico-zip {width:20px; height:20px; background:url(../images/file_sprite.png) no-repeat -194px -2px;}
+/* 탭메뉴 구성 */
+.nav-tabs {position:relative; margin-top:30px; margin-bottom:30px; border-bottom:none;}
+.nav-tabs + .nav-tabs {margin-top:0;}
+.nav-tabs:before {content:''; position:absolute; bottom:0; display:block; width:100%; height:1px; background-color:#414141; z-index:1;}
+.nav-tabs>li {position:static; display:table; width:201px; height:47px; border:1px solid #ccc; background-color:#f7f7f7; margin-top:-1px; margin-bottom:0; margin-left:-1px; vertical-align:middle;}
+.nav-tabs>li>a,
+.nav-tabs>li>a:hover {display:table-cell; height:auto; padding:4px 10px 5px; margin-right:0; border-radius:0; border:none; background-color:transparent; color:#696969; line-height:1.1; text-decoration:none; white-space:normal; word-break:keep-all; word-wrap:break-word; text-align:center; vertical-align:middle; cursor:pointer;}
+.nav-tabs>li.active {position:relative; border:1px solid #888; border-bottom:1px solid #414141; background-color:#fff; z-index:1; cursor:default;}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {border:none; background:transparent; font-family:'NotoSansR'; color:#414141; cursor:default;}
+.nav-tabs>li.disabled>a,
+.nav-tabs>li.disabled>a:focus,
+.nav-tabs>li.disabled>a:hover {color:#b5b5b5; cursor:default;}
+.nav-tabs.align-center {display:inline-block; width:auto; margin-left:auto; margin-right:auto;}
+.nav-tabs.align-center:before {background-color:transparent;}
+.nav-tabs.ui-multi-line:before {top:0; background-color:#ccc;}
+.nav-tabs.ui-multi-line li {margin-top:0; border-top:none;}
+.nav-tabs.ui-multi-line li.active {position:relative; border-top:1px solid #888; z-index:1;}
+.nav-tabs.nav-tabs-type2:before {background-color:#ccc;}
+.nav-tabs.nav-tabs-type2>li {width:241px; height:44px; border:1px solid #ccc; background-color:#fff;}
+.nav-tabs.nav-tabs-type2>li>a,
+.nav-tabs.nav-tabs-type2>li>a:hover,
+.nav-tabs.nav-tabs-type2>li>a:focus {height:100%; border:none; background-color:transparent; font-size:14px;}
+.nav-tabs.nav-tabs-type2>li.active {border-color:#0d417b; background-color:#0d417b;}
+.nav-tabs.nav-tabs-type2>li.active>a,
+.nav-tabs.nav-tabs-type2>li.active>a:focus,
+.nav-tabs.nav-tabs-type2>li.active>a:hover {color:#fff;}
+.nav-tabs.nav-tabs-type2>li.disabled {background-color:#f7f7f7;}
+.nav-tabs.nav-tabs-type2>li.disabled>a,
+.nav-tabs.nav-tabs-type2>li.disabled>a:focus,
+.nav-tabs.nav-tabs-type2>li.disabled>a:hover {color:#b5b5b5;}
+.nav-tabs.nav-tabs-type2.ui-multi-line li {border-top:none;}
+.nav-tabs.ruins-tabs {display:inline-block; margin-left:auto; margin-right:auto;}
+.nav-tabs.ruins-tabs:before {display:none;}
+.nav-tabs.ruins-tabs>li {border:1px solid #e0e0e0; background-color:#f1f1f3;}
+.nav-tabs.ruins-tabs>li>a,
+.nav-tabs.ruins-tabs>li>a:hover {border:none; background-color:transparent; font-size:14px; color:#696969;}
+.nav-tabs.ruins-tabs>li.active {border:1px solid #004fa8; background-color:#004fa8;}
+.nav-tabs.ruins-tabs>li.active>a,
+.nav-tabs.ruins-tabs>li.active>a:hover {color:#fff;}
+.nav-tabs.ruins-tabs>li.active>a:after {content:''; display:inline-block; width:19px; height:19px; margin-left:5px; margin-bottom:3px; border-radius:100%; background:#fff url(../images/contents/blt1.png) no-repeat center center; vertical-align:middle;}
+.nav-tabs.ruins-tabs.large li {width:225px;}
+.nav-tabs.ruins-tabs-type2:before {background-color:#c2c2c2;}
+.nav-tabs.ruins-tabs-type2>li {border:1px solid #e0e0e0;}
+.nav-tabs.ruins-tabs-type2>li>a,
+.nav-tabs.ruins-tabs-type2>li>a:hover {color:#4e4e4f;}
+.nav-tabs.ruins-tabs-type2>li.active {border-color:#414141 #c2c2c2 #c2c2c2; background-color:#fff;}

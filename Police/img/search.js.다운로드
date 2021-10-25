@@ -1,0 +1,192 @@
+$(function(){
+	$('.searchTerm').attr('autocomplete','off'); //자동완성 사용하지 않음 w3c html5속성
+	$('.detail_btn').bind('click' , function()    {
+		$('.more_sh').toggle()
+		return false;
+	});
+
+	// if($("#naviForm #colTarget").val()!="total"){ // 원래 소스 20141103 접근성 작업하면서 수정 _ 강태희
+	if($("#colTarget").val()!="total"){
+		//$('.jq_s2more').parent().addClass('jq_s2more02');
+		$("#eachbottom").hide();
+
+		$("#lastbottom span").addClass('jq_s2more02');
+
+
+		return false;
+	}else{
+
+		$("#lastbottom").hide();
+	}
+
+	$('.jq_s2more').bind('click' , function()    {
+		var jqvalue = $(this).attr("value");
+		changeCol("colTarget",jqvalue);
+		/*alert("!!");
+		$(this).parent().addClass('jq_s2more02');
+		return false;*/
+	});
+});
+
+function keydownSearch(){
+	var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+	if(keyCode==13){fn_search();}
+}
+
+function newChangeSearch(field,value){
+	document.searchForm[field].value = value;
+	document.searchForm.submit();
+}
+function changeValue(field,value){
+	document.naviForm[field].value = value;
+	document.naviForm.submit();
+}
+
+function moveToTop(){
+	window.scroll(0,0);
+}
+
+/**======================================================================================*/
+
+function changeCol(field,value){
+    $("#total").removeClass("on");
+    $("#cate").removeClass("on");
+    $("#web").removeClass("on");
+    $("#board").removeClass("on");
+    $("#doc").removeClass("on");
+    $("#"+value).addClass("on");
+    
+    if(value == "total"){
+        $(".search_list").show();
+        $(".search_move").show();
+    }else{
+        $(".search_list").hide();
+        $(".search_move").hide();
+        $("#"+value+"List").show();
+    }
+}
+
+function moreList(field,value){
+    changeCol(field,value);
+    if(value == "total"){
+        document.searchForm.pageListSize.value = "3";
+    }else{
+        document.searchForm.pageListSize.value = "10";
+    }
+    document.searchForm.colTarget.value = value;
+    fn_search();
+}
+
+function page(pageNum){
+    document.searchForm.q_currPage.value = pageNum;
+    document.searchForm.currentPage.value = pageNum;
+    fn_search();
+}
+
+function fn_search(form){
+    if(document.searchForm.searchTerm.value==""){
+        alert("검색어를 입력하세요");
+        return false;
+    }else{
+        $('#'+form+' input[name^="ordr_"]').val($("#orderBy").val());
+      
+        if(document.searchForm.colTarget.value == "total"){
+            document.searchForm.pageListSize.value = "3";
+        }
+        
+        var searchTerm = document.searchForm.searchTerm.value;
+        var researchTerm = document.searchForm.researchTerm.value;
+        var preSearchTerm = document.searchForm.preSearchTerm.value;
+        var newResearchTerm = "";
+        if(document.searchForm.research.checked){
+            if(researchTerm == null || researchTerm == ""){
+                newResearchTerm = (preSearchTerm +","+searchTerm);
+            }else{
+                newResearchTerm = (researchTerm +","+searchTerm);
+            }
+        }
+        
+        if(form == "searchDetailForm"){
+            document.searchDetailForm.searchTerm.value = document.searchForm["searchTerm"].value;
+            document.searchDetailForm.colTarget.value = document.searchForm["colTarget"].value;
+            document.searchDetailForm.q_rowPerPage.value = document.searchDetailForm.pageListSize.value;
+            document.searchDetailForm.researchTerm.value = newResearchTerm;
+            document.searchDetailForm.submit();
+        }else{
+            document.searchForm.researchTerm.value = newResearchTerm;
+            document.searchForm.submit();
+        }
+    }
+}
+
+function fnPeriodCheck(val)
+{
+	var startDate = document.searchDetailForm.sDate;
+	var endDate = document.searchDetailForm.eDate;
+//	var sDImg = document.getElementById("sDImg");
+//	var eDImg = document.getElementById("eDImg");
+	var year;
+	var month;
+	var day;
+	var date = new Date();
+
+	year = date.getFullYear();
+	month = date.getMonth()+1;
+	day = date.getDate();
+
+	if(("" + month).length == 1)
+		month = "0" + month;
+	if (("" + day).length   == 1)
+		day   = "0" + day;
+
+	endDate.value = year + "-" + month + "-" + day;
+
+	if(val == "all")
+	{
+//		sDImg.disabled = "disabled";
+//		eDImg.disabled = "disabled";
+		startDate.value = "";
+		endDate.value = "";
+	}
+	else if(val == "week")
+	{
+//		sDImg.disabled = "disabled";
+//		eDImg.disabled = "disabled";
+	    date.setDate(date.getDate() - 7);
+	    year = date.getFullYear();
+		month = date.getMonth()+1;
+		day = date.getDate();
+		if(("" + month).length == 1)
+			month = "0" + month;
+    	if (("" + day).length   == 1)
+			day   = "0" + day;
+		startDate.value = year + "-" + month + "-" + day;
+	}
+	else if(val == "month")
+	{
+//	sDImg.disabled = "disabled";
+//	eDImg.disabled = "disabled";
+		date.setMonth(date.getMonth() - 1);
+		year = date.getFullYear();
+		month = date.getMonth()+1;
+		day = date.getDate();
+		if(("" + month).length == 1)
+			month = "0" + month;
+    	if (("" + day).length   == 1)
+			day   = "0" + day;
+		startDate.value = year + "-" + month + "-" + day;
+	}
+	else if(val == "INPUT")
+	{
+		startDate.value = "";
+		endDate.value = "";
+		sDImg.disabled = "";
+		eDImg.disabled = "";
+	}
+
+}
+
+function searchAreaOnOff(){
+    $('.conSearch2').toggle();
+    $('.btnSearch2').toggleClass('on');
+}

@@ -1,0 +1,299 @@
+@charset "utf-8";
+:root {
+    --swiper-theme-color: #ebc10a;
+}
+body{
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+a{font-size: 18px; color: #333; line-height: 1;}
+
+/*공통속성*/
+.container{width: 1160px; height: inherit; margin: 0 auto; /* background: rgba(0,0,0,.3); */}
+
+
+
+/* 레이아웃 */
+#wrap{}
+#header{width: 100%; height: 80px; background-color: #fff;}
+#bannerTitle{width: 100%; height: auto; padding: 50px 0; }
+#videoBanner{width: 100%;}
+#templat{width: 100%;}
+#bannerWrap{width: 100%; background-color: #f6f6f6; padding: 60px 0;}
+#titleBox{width: 100%; padding: 60px 0;}
+#bxslider{width: 100%; background: #555;}
+#dynamic{width: 100%; padding: 60px 0; background-color: #fcce01;}
+#movie{width: 100%; background-color: #8c816e; padding-top: 60px}
+#muser{width: 100%; padding: 60px 0;}
+#reference{width: 100%; padding: 60px 0; background: #f7f7f7;}
+#etc{width: 100%; height: 163px; background-color: #1e1e1e;}
+#footer{width: 100%; padding: 60px 0;}
+/* header */
+.pc{display: flex; justify-content: space-between; }
+.pc h1{padding-top:27px;}
+.pc h1>a{display: block;}
+.pc h1>a>img{display: block;}
+.pc #nav{}
+.pc #nav ul{display: flex;}
+.pc #nav ul>li{margin-right: 49px;}
+.pc #nav ul>li>a{display: block; padding: 31px 0; font-weight: 500;}
+.pc #nav ul>li:hover>a{color:#fecb29}
+.pc .gnb{display: flex;}
+.pc .gnb ul{display: flex;}
+.pc .gnb ul>li{margin-right: 18px;}
+.pc .gnb ul>li>a{display: block; font-size: 14px; padding: 35px 0  32px 0;}
+.pc .gnb .sns{}
+.pc .gnb .sns li{margin-right: 8px;}
+.pc .gnb .sns li:last-child{margin-right:0}
+.pc .gnb .sns li a{display: block; padding: 25px 0;}
+
+/* 모바일 */
+.mobile{display: none; position: fixed; width: 100%; height: 80px; background-color: rgb(240, 231, 108); top:0; left:0; z-index: 5; padding: 0 20px; box-sizing: border-box;}
+.mobile ul{display: flex; justify-content: space-between; align-items: center; height: 80px;}
+.mobile ul li:first-child>a.app-btn{display: block; width: 26px; height: 16px; position: relative;}
+.mobile ul li a.app-btn .bar{width: 100%; height: 2px; background-color: #555; display: block; position: absolute;top:0; left:0; transition: all .3s}
+.mobile ul li a.app-btn .bar1{top:0}
+.mobile ul li a.app-btn .bar1.addAppBtn{top:50%; margin-top: -1px; transform:rotate(45deg)}
+.mobile ul li a.app-btn .bar2{top: 50%; }
+.mobile ul li a.app-btn .bar2.addAppBtn{opacity: 0;}
+.mobile ul li a.app-btn .bar3{top:100%}
+.mobile ul li a.app-btn .bar3.addAppBtn{top: 50%; margin-top: -1px; transform: rotate(-45deg);}
+.mobile>ul>li:first-child>.mobile-nav{position: absolute; width: 100%; height: auto; top: 80px; left: 0; display: none; background-color:rgba(0,0,0,.8);}
+.mobile ul li .mobile-nav>li{width: 100%; height: 70px;  text-align: center; border-bottom: 1px solid #ddd;}
+.mobile ul li .mobile-nav li a{display: block; color: #efefef; line-height: 70px;}
+
+
+.mobile ul li .fa-search{font-size: 20px; color: #555;}
+
+/* bannerTitle */
+.banner-title>div{display: flex;}
+.banner-title .banner-title-left{flex:1 1 70%; height: auto; border-right: 1px solid #ddd; box-sizing: border-box;}
+.banner-title .banner-title-right{flex:1 1 30%;  height: auto; }
+.banner-title-left h2{font-size: 32px; color: #1e1e1e}
+.banner-title-left h2 .text-icon{position: relative;}
+.banner-title-left h2 .text-icon img{ position: absolute; top: -5px; left: 18px}
+.banner-title-left .text-bold{ font-size: 64px; color: #1e1e1e}
+.banner-title-left .text-bold .colorY{color: #f9c200}
+.banner-title-right{padding: 0 30px;}
+.banner-title-right h3{font-size: 17px; color: #4e1515; }
+.banner-title-right .news-wrap{position: relative; top: 18px; height: 95px;  overflow: hidden;}
+.banner-title-right .news-wraps{position: absolute; top: 100%}
+.banner-title-right .news-wraps:first-child{ top: 0}
+.banner-title-right .news-wraps p:first-child{margin-bottom: 10px;}
+.banner-title-right .news-wraps p .text{font-size: 14px;}
+.banner-title-right .news-wraps p .data{font-size: 12px; display: block;}
+
+/* video */
+.video-banner{width: 100%; height: 610px;  background: #fcce01 url(../images/mango_player3.png) no-repeat center center; position: relative;}
+.video-banner .playBtn{ position: absolute; top: 50%; left: 50%; margin-top: -55px; margin-left: -55px; animation: ani 1s infinite alternate; }
+
+/* templat */
+.templat{padding: 60px 0;}
+.templat h2{font-size: 40px; color:#1e1e1e; text-align: center;}
+.templat p{margin-top: 27px; text-align: center; color: #777; font-size: 18px;}
+.templat .templat-line{margin-top: 75px; padding-bottom: 90px;}
+.templat .templat-line>ul{}
+.templat .templat-line>.title>li{float: left; position: relative; }
+.templat .templat-line>.title>li:nth-child(2n){top: 70px}
+.templat .templat-line>.title>li:nth-child(1){left:12px}
+.templat .templat-line>.title>li:nth-child(2){left:17px}
+.templat .templat-line>.title>li:nth-child(3){left:38px}
+.templat .templat-line>.title>li:nth-child(4){left:62px}
+.templat .templat-line>.title>li:nth-child(5){left:79px}
+.templat .templat-line>.title>li:nth-child(6){left:90px}
+.templat .templat-line>.title>li:nth-child(7){left:121px}
+.templat .templat-line>.title>li:nth-child(8){left:123px}
+.templat .templat-line>.title>li:nth-child(9){left:88px}
+.templat .templat-line>.title>li:nth-child(10){left:79px}
+.templat .templat-line>.title>li:nth-child(11){left:80px}
+.templat .templat-line>.title>li:nth-child(12){left:110px}
+.templat .templat-line>.title>li:nth-child(13){left:102px}
+.templat .templat-line>.title>li:nth-child(14){left:120px}
+.templat .templat-line>.title>li:nth-child(15){left:135px}
+.templat .templat-line>.title>li>a{color: #666; font-size: 16px;}
+.templat .templat-line>.title>li>.ellipse{position: absolute; width: 18px; height: 18px; background: #fcce01; border-radius: 50%; text-align: center; top: 3px; left: 35px; font-size: 12px; color: #fff; font-style: normal;}
+.templat .templat-line>.title>li>.templat-text{position: absolute; width: 300px; background: #777; font-size: 12px; color: #fff; padding: 5px; border-radius: 20px; overflow: hidden; left: 0; top: -30px; display: none;}
+.templat .templat-line>.title>li.on .templat-text{ display: block; }
+.templat .templat-line>.title>li .templat-text1{left: -200px }
+.templat .templat-line>.title>li .templat-text2{left: -200px }
+.templat .templat-line>.title>li .templat-text3{left: -220px }
+
+.templat .templat-line>.title>li:nth-child(2n)>.templat-text{ top: 30px }
+.templat .templat-line>.btn{margin-left: 40px; position: relative; top:18px}
+.templat .templat-line>.btn>li{position: relative;float: left; width: 14px; height: 14px; border: 1px solid #757575; border-radius: 50%;}
+.templat .templat-line>.btn>li:not(:last-child){ margin-right: 60px; }
+.templat .templat-line>.btn>li.on{width: 14px; height: 14px; background-color: #757575;}
+
+
+/* bannerWrap */
+.banner{width: 100%}
+.banner .container{position: relative;}
+.banner .bannerLeftBtn{position: absolute; left: -100px; top: 50%; transform: translateY(-50%); transition: .3s;}
+.banner .bannerRightBtn{position: absolute; right: -100px;top: 50%; transform: translateY(-50%); transition: .3s;}
+.banner .bannerArea{width: 1160px; overflow: hidden; }
+.banner .bannerArea .area{width: 2350px; position: relative; left: 0}
+.banner .bannerArea .area li{float: left; width:220px; margin-right: 15px;}
+.banner .bannerArea .area li a{display: block;}
+.banner .bannerArea .area li a img{width: 100%}
+
+
+/* swiper */
+#swiperSlide{width: 100%; padding: 60px 0;}
+.swiper{ width: 100%; }
+.swiper-slide img{width: 100%}
+
+element.style {
+    width: 380px;
+    margin-right: 39px;
+}
+
+/* section-title */
+.section-title{font-size: 40px; color: #1e1e1e; text-align: center;}
+.section-p{margin-top: 30px; text-align: center; font-size: 18px; color: #777; }
+
+
+.bx-wrapper {
+    box-shadow: none;
+    border: none;
+    background: #555;
+}
+
+/* dynamic */
+.dynamic h2{text-align: center; margin-bottom: 40px;}
+.dynamic h3{font-size: 50px; color: #fff; text-align: center; margin-bottom: 22px;}
+.dynamic h4{font-size: 25px; color: #555; text-align: center; margin-bottom: 40px;}
+.dynamic .dynamic_banner{}
+.dynamic .dynamic_banner ul{display: flex; justify-content: space-between;}
+.dynamic .dynamic_banner ul li{width: 24%;}
+.dynamic .dynamic_banner ul li div img{width: 100%}
+.dynamic .link{text-align: right;}
+.dynamic .link a{display: block; padding: 10px; font-size: 14px; text-decoration: underline; color: #555}
+
+/* movie */
+.movie{}
+.movie .container{display: flex; justify-content: space-between;}
+.movie .movie-phone{height: 700px; position: relative; background: url(../images/main_mobile.png) no-repeat center bottom; width: 50%}
+.movie .movie-phone video{width:407px; height: 407px;  position: absolute; top: 238px; left: 50%; transform: translateX(-50%)}
+.movie .movie-text{flex: 1 1 50%; padding: 60px 20px 20px 20px;}
+.movie .movie-text h3{font-size: 48px; color: #fff; margin-bottom: 50px;}
+.movie .movie-text h3 span{color:#ffe7bd}
+.movie .movie-text p{ font-size: 25px; color:#ffe7bd; letter-spacing: -1px; margin-bottom: 30px;}
+
+/* muser */
+.muser-area h2{font-size: 52px; font-weight: 100; color: #1e1e1e; text-align: center; margin-bottom: 100px;}
+.muser-area h2 span{font-size: 50px; font-weight: normal; display: block;}
+.muser-area .userText{display: flex;}
+.muser-area .userText li{ padding: 0 20px; border-right: 1px solid #e9e9e9; font-size: 18px; color: #777}
+.muser-area .userText li:last-child{border-right:none}
+.muser-area .userText li span{display: block; color: #1e1e1e; text-align: center; font-size: 14px;}
+
+/* reference */
+.reference-area img{width: 100%}
+
+.etc-area ul{display: flex;border-left: 1px solid #2e2e2e;}
+.etc-area ul li{width: 20%;height: 163px; text-align: center; border-right: 1px solid #2e2e2e; box-sizing: border-box; padding-top: 100px;}
+.etc-area ul li:nth-child(1){background: url(../images/MA_manual.png) no-repeat center 50px;}
+.etc-area ul li:nth-child(2){background: url(../images/MA_introduction.png) no-repeat center 50px;}
+.etc-area ul li:nth-child(3){background: url(../images/MA_license.png) no-repeat center 50px;}
+.etc-area ul li:nth-child(4){background: url(../images/MA_qna.png) no-repeat center 50px;}
+.etc-area ul li:nth-child(5){background: url(../images/MA_news.png) no-repeat center 50px;}
+.etc-area ul li a{color: #f6f6f6}
+
+/* footer */
+.footer-area .container{}
+.f_inner{display: flex;}
+.f_inner ul{display: flex;}
+.f_inner ul li{ padding: 0 10px; box-sizing: border-box;}
+.f_inner ul li .tit{font-size: 14px; color:#1e1e1e; margin-bottom: 20px;}
+.f_inner ul li .txt{font-size: 14px; color:#666;}
+.f_inner ul li.foot1{}
+.f_inner ul li.foot2{}
+.f_inner ul li.foot3{}
+.f_inner .util{flex: 0 1 30%}
+.f_inner .util ul{}
+.f_inner .util ul li{}
+.f_inner .util ul li a{}
+.copy{font-size: 14; color: #666; padding-top: 30px;}
+
+@keyframes ani{
+    form{transform: scale(1)}
+    to{transform: scale(1.2)}
+}
+
+@media screen and (max-width:1360px ) {
+    .banner .bannerLeftBtn{ left: 50px; z-index: 9999;}
+    .banner .bannerRightBtn{right: 50px; z-index: 9999;}
+}
+
+@media screen and (max-width:1200px ) {
+    .container{width: 100%; padding: 0 20px; box-sizing: border-box;}
+    .templat .templat-line{display: none;}
+    .banner .bannerArea{width: 100%; overflow: hidden; }
+    .movie .movie-text h3{font-size: 40px;  margin-bottom: 40px;}
+    .movie .movie-text p{ font-size: 20px; color:#ffe7bd; letter-spacing: -1px; margin-bottom: 25px;}
+}
+
+@media screen and (max-width:1125px ) {
+    .pc #nav ul>li{margin-right: 30px;}
+    .pc .gnb .sns{display: none;}
+    .pc .gnb ul>li:last-child{margin-right: 0}
+    .dynamic h3{font-size: 40px; margin-bottom: 18px;}
+    .dynamic h4{font-size: 20px; color: #555; text-align: center; margin-bottom: 20px;}
+    .movie .container{display: flex; flex-direction: column;}
+    .movie .movie-phone{width: 100%; border-bottom: 5px solid #f9c200;}
+    
+    .movie .movie-text{flex: 1 1 100%; text-align: center;}
+}
+@media screen and (max-width:1000px ) {
+    .banner-title .banner-title-left{flex:1 1 100%; height: auto; border-right: none; box-sizing: border-box;}
+    .banner-title .banner-title-right{display: none; }
+    .muser-area .userText{display: flex; flex-wrap: wrap;}
+    .muser-area .userText li{ width: 50%; box-sizing: border-box; margin-bottom: 10px;}
+    .muser-area .userText li:nth-child(2n){border-right: none;}
+    .reference-area{display: none;}
+    .etc-area ul{border-left: none;}
+    .etc-area ul li:last-child{border-right: none;}
+
+    .f_inner{display: flex; flex-wrap: wrap;}
+    .f_inner .util{flex: 0 1 100%; margin-top: 20px;}
+}
+@media screen and (max-width:960px ) {
+    .pc #nav ul>li:last-child{margin-right: 0}
+    .pc .gnb{position: absolute; right:20px; top: 0px}
+    .pc .gnb ul>li>a {  padding: 5px 0 }
+    .video-banner{height: 560px;  background: #fcce01 url(../images/mango_player3.png) no-repeat center center/90%;}
+    .dynamic h3{font-size: 30px; margin-bottom: 16px;}
+    .dynamic h4{font-size: 18px; color: #555; text-align: center; margin-bottom: 20px;}
+
+    .f_inner>ul{display: flex; flex-wrap: wrap;}
+    .f_inner>ul>li{width: 100%; margin-bottom: 20px; border-bottom: 1px solid #ddd;padding-bottom: 10px;}
+}
+@media screen and (max-width:768px ) {
+    .pc {display: none;}
+    .mobile{display: block;}
+
+    .banner-title>div{display: flex; flex-direction: column;}
+    .banner-title .banner-title-left{flex:1 1 100%; height: auto; border-right: none; box-sizing: border-box;}
+    .banner-title .banner-title-right{flex:1 1 100%; display: block;
+    background-color: #eee;  padding-bottom: 30px; margin-top: 30px;}
+    .video-banner{height: 560px;  background: #fcce01 url(../images/mango_player3.png) no-repeat center center/80%;}
+
+    .templat h2{font-size: 30px;}
+    .templat p{margin-top: 27px; font-size: 16px;}
+
+    .section-title{font-size: 30px; }
+    .section-p{margin-top: 27px; font-size: 16px; }
+
+    .dynamic .dynamic_banner ul{display: flex; justify-content: space-between; flex-wrap: wrap;}
+    .dynamic .dynamic_banner ul li{width: 48%;}
+    .movie .movie-text{flex: 1 1 100%; text-align: left;}
+    
+
+    .muser-area .userText li{ width: 100%;  border-right: none; border-bottom: 1px solid #e9e9e9; padding: 20px 0;}
+    .muser-area .userText li:last-child{border-bottom: none;}
+
+
+}
+@media screen and (max-width:360px ) {
+    .dynamic .dynamic_banner ul li{width: 100%;}
+}

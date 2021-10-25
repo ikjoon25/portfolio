@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@media screen and (max-width: 1024px) {
+    .header-menu-bar{display: block;}
+    aside{display: none;}
+    .header-logoNav{display: none;}
+
+}

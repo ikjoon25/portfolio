@@ -1,0 +1,643 @@
+<!DOCTYPE HTML>
+<html lang='ko'>
+<head>
+	<title> </title>
+	<meta charset='utf-8'>
+	<meta name='Viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.6'>
+	<meta name='Title' content='police'>
+	<meta name='Subject' content='police'>
+	<meta name='Keywords' content='경찰청'>
+	<meta name='Author' content='ikjoon'>
+	<meta name='Publisher' content='ikjoon'>
+	<meta name='Description' content=''>
+	<meta name='Author-Date' content=''>
+	<meta name='Copyright' content=''>
+	<meta name='Robots' content='index,follow'>
+
+
+	<link rel='stylesheet' href='css/reset.css'>
+	<link rel='stylesheet' href='css/style.css'>
+
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<script src='js/lib/jquery-1.12.4.min.js'></script>
+	<script src='js/lib/jquery.easing.1.3.js'></script>
+	<script src='js/lib/prefixfree.min.js'></script>
+	<script src='js/lib/modernizr-custom.js'></script>
+	<script src='js/lib/javascript.js' defer></script>
+
+
+	<!--[if (lte IE 9)]>
+		<script src='js/lib/IE9.js'></script>
+	<![endif]-->
+
+	<!--[if (lte IE 8)]>
+		<script src='js/lib/html5shiv.min.js'></script>
+		<link rel='stylesheet' href='#'>
+	<![endif]-->
+
+	<!--[if (lte IE 7)]>
+		<link rel='stylesheet' href='#'>
+	<![endif]-->
+
+</head>
+<body>
+	<ul id="skip">
+		<li><a href="#header">헤더 바로가기</a></li>
+		<li><a href="#nav">메뉴 바로가기</a></li>
+		<li><a href="#content">내용 바로가기</a></li>
+	</ul>
+	<div id="wrap">
+		<div id="header">
+			<div class="header-top">
+				<div class="container">
+					<div class="left-header">
+						<h1 class="ir_pm logo"><a href="index.html">로고</a></h1>
+						<ul class="gnb">
+							<li><a href="#"><img src="../Police/img/banner_taegeukgi.png" alt="태극기" title="국가상징 알아보기"></a></li>
+							<li class="guk"><a href="#">국가상징 <br> 알아보기</a></li>
+							<li><a href="#"><img src="../Police/img/banner_govindex.png" alt="보다나은정부" title="보다나은정부"></a></li>
+							<li><a href="#"><img src="../Police/img/go-korea.png" alt="힘내라대한민국" title="힘내라대한민국"></a></li>
+						</ul>
+					</div>
+					<div class="menu-zoom">
+						<div class="lang-chang">
+							<a href="#" class="btn-eng" title="영문홈페이지">
+								<span>English</span>
+							</a>
+							<ul>
+								<li><a href="#" class="bnt-zoomout" title="화면축소"></a></li>
+								<li><a href="#" class="bnt-zoomset" title="기본크기"><span>가</span></a></li>
+								<li><a href="#" class="bnt-zoomin" title="화면축소"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-menu">
+				<div class="container">
+					<button type="button" class="bager-toggle" data-toggle="collapse" tabindex="2">
+						<span>전체메뉴열기</span>
+					</button>
+					<div class="search-toggle" data-toggle="collapse" date-targer="#search" tabindex="2">
+						<span>검색영역 열기</span>
+					</div>
+					<div class="menu">
+						<ul class="cf">
+							<li class="nav-tit"><a href="#">알림/소식</a>   
+								<div class="drop drop1">
+									<ul class="sub">
+										<li><a href="#">알림</a>
+											<ul>
+												<li><a href="#">-공지사항</a></li>
+												<li><a href="#">-보도자료</a></li>
+												<li><a href="#">-사실확인</a></li>
+												<li><a href="#">-채용공고</a></li>
+												<li><a href="#">-입찰공고</a></li>
+											</ul>
+										</li>
+										<li><a href="#">소식</a>
+											<ul>
+												<li><a href="#">-홍보콘텐츠</a></li>
+											</ul>
+										</li>
+										<li><a href="#">정책홍보실</a>
+											<ul>
+												<li><a href="#">-목표(비전)</a></li>
+												<li><a href="#">-정책실명제</a></li>
+												<li><a href="#">-수사구조개혁</a></li>
+												<li><a href="#">-인권경찰</a></li>
+											</ul>
+										</li>
+										<li><a href="#">경찰청 인권위원회</a>
+											<ul>
+												<li><a href="#">-위원장 인사말</a></li>
+												<li><a href="#">-인권위원 프로필</a></li>
+												<li><a href="#">-활동소식</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-tit"><a href="#">소통/공감</a>
+								<div class="drop drop2">
+									<ul class="sub">
+										<li><a href="#">생활정보</a>
+											<ul>
+												<li><a href="#">-주요뉴스</a></li>
+											</ul>
+										</li>
+										<li><a href="#">적극행정</a>
+											<ul>
+												<li><a href="#">-제도소개</a></li>
+												<li><a href="#">-국민참여</a></li>
+												<li><a href="#">-적극행정 자료실</a></li>
+												<li><a href="#">-적극행정 우수공무원</a></li>
+											</ul>
+										</li>
+										<li><a href="#">소통게시판</a>
+											<ul>
+												<li><a href="#">-자유게시판</a></li>
+											</ul>
+										</li>
+										<li><a href="#">추모관</a>
+											<ul>
+												<li><a href="#">-순직경찰관추모</a></li>
+												<li><a href="#">-경찰영웅</a></li>
+												<li><a href="#">-경찰기념공원</a></li>
+												<li><a href="#">-추모관공지</a></li>
+												<li><a href="#">-행사갤러리</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-tit"><a href="#">신고/지원</a>
+								<div class="drop drop3">
+									<ul class="sub">
+										<li><a href="#">범죄신고/상담</a>
+											<ul>
+												<li><a href="#">-경찰민원포털</a></li>
+												<li><a href="#">-가정,학교,성폭력, 등 신고/상담</a></li>
+												<li><a href="#">-스마트 국민제보</a></li>
+												<li><a href="#">-유실물 통합포털</a></li>
+												<li><a href="#">-안전신문고</a></li>
+											</ul>
+										</li>
+										<li><a href="#">사이버안전지킴이</a>
+											<ul>
+												<li><a href="#">-사이버범죄 신고/상담</a></li>
+												<li><a href="#">-사이버범죄 예방교육 신청</a></li>
+												<li><a href="#">-인터넷 사기 의심 전화 계좌번호 조회</a></li>
+												<li><a href="#">-사이버범죄 예방홍보물</a></li>
+											</ul>
+										</li>
+										<li><a href="#">안심 서비스</a>
+											<ul>
+												<li><a href="#">-순찰장소 신청</a></li>
+											</ul>
+										</li>
+										<li><a href="#">치안정보/지원</a>
+											<ul>
+												<li><a href="#">-회복적경찰활동 및 범죄피해자 지원</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-tit"><a href="#">정보공개</a>
+								<div class="drop drop4">
+									<ul class="sub">
+										<li><a href="#">정보공개제도</a>
+										<ul>
+											<li><a href="#">-제도안내</a></li>
+											<li><a href="#">-법령/서식</a></li>
+											<li><a href="#">-수수료안내</a></li>
+											<li><a href="#">-접수처안내</a></li>
+											<li><a href="#">-정보공개편람/청구</a></li>
+											<li><a href="#">-정보목록</a></li>
+										</ul>
+										</li>
+										<li><a href="#">재정현황</a>
+											<ul>
+												<li><a href="#">-사업설명자료</a></li>
+												<li><a href="#">-국회심의과정</a></li>
+												<li><a href="#">-예산확정현황</a></li>
+												<li><a href="#">-예산집행현황</a></li>
+											</ul>
+										</li>
+										<li><a href="#">사전정보공표</a>
+											<ul>
+												<li><a href="#">-사전정보공표목록</a></li>
+												<li><a href="#">-정보공개자료실</a></li>
+												<li><a href="#">-비공개세부기준</a></li>
+											</ul>
+										</li>
+										<li><a href="#">공공데이터</a>
+											<ul>
+												<li><a href="#">-경찰백서</a></li>
+												<li><a href="#">-공공데이터 개방</a></li>
+												<li><a href="#">-경찰통계자료</a></li>
+												<li><a href="#">-경찰범죄통계</a></li>
+												<li><a href="#">-경찰접수 교통사고 현황</a></li>
+												<li><a href="#">-통계연보</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-tit"><a href="#">법령/정책</a>
+								<div class="drop drop5">
+									<ul class="sub">
+										<li><a href="#">법령정보</a>
+											<ul>
+												<li><a href="#">-입법예고</a></li>
+												<li><a href="#">-행정예고</a></li>
+												<li><a href="#">-개정법령</a></li>
+												<li><a href="#">-소관법령</a></li>
+												<li><a href="#">-훈련예규</a></li>
+												<li><a href="#">-법령검색</a></li>
+												<li><a href="#">-판례검색</a></li>
+											</ul>
+										</li>
+										<li><a href="#">국회정보공개</a>
+											<ul>
+												<li><a href="#">-국회제출자료</a></li>
+												<li><a href="#">-치안정책자료</a></li>
+												<li><a href="#">-국회현장</a></li>
+											</ul>
+										</li>
+										<li><a href="#">규제개혁</a>
+											<ul>
+												<li><a href="#">-추진과제</a></li>
+												<li><a href="#">-규제혁신</a></li>
+												<li><a href="#">-규제개혁신문고</a></li>
+												<li><a href="#">-규제개혁포털</a></li>
+												<li><a href="#">-국민 규제입증요청</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-tit"><a href="#">기관소개</a>
+								<div class="drop drop6">
+									<ul class="sub">
+										<li><a href="#">열린청장실</a>
+											<ul>
+												<li><a href="#">-청장소개</a></li>
+												<li><a href="#">-청장동정</a></li>
+												<li><a href="#">-청장과의 대화</a></li>
+												<li><a href="#">-역대청장소개</a></li>
+											</ul>
+										</li>
+										<li><a href="#">조직안내</a>
+											<ul>
+												<li><a href="#">-조직구성도</a></li>
+												<li><a href="#">-부서별연락처</a></li>
+												<li><a href="#">-전국경찰관서안내</a></li>
+												<li><a href="#">-관광경찰</a></li>
+											</ul>
+										</li>
+										<li><a href="#">경찰의이해</a>
+											<ul>
+												<li><a href="#">-포돌이/포순이</a></li>
+												<li><a href="#">-상징</a></li>
+												<li><a href="#">-계급과역할</a></li>
+												<li><a href="#">-장비소개</a></li>
+												<li><a href="#">-경찰현장</a></li>
+												<li><a href="#">-서비스현장</a></li>
+											</ul>
+										</li>
+										<li><a href="#">경찰역사</a>
+											<ul>
+												<li><a href="#">-민주 인권 민생경찰의뿌리</a></li>
+												<li><a href="#">-경찰역사순례길</a></li>
+												<li><a href="#">-역사자료실</a></li>
+												<li><a href="#">-경찰조직연혁</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-tit"><a href="#">ENGLISH</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<ul>
+				<li class="ir_pm"><a href="#">메인이미지</a>
+					<div class="container">
+						<p>"국민이 안전한 사이버 공간"<br>"경찰이 만들겠습니다."<a href="#" targer="#" title="새창열림">사이버안전 지킴이</a></p>
+					<div>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="contents2">
+			<div class="row communication ">
+				<div class="container1">
+					<h2 class="left">
+						<span class="word">국민과 소통하는<br>따뜻하고 믿음직한<br>경찰로 국민과 함께<br>하겠습니다.</span>
+					</h2>
+					<div class="slick">
+						<ul class="items">
+							<li>
+								<img src="../Police/img/communication_bg3.png" alt="청장과의만남">
+								<dl>
+									<dt>청장과의 만남</dt>
+									<dd><span class="word-break">국민 여러분의 생생한 의견을 듣고<br>이를 치안행정에 반영하겠습니다.</span></dd>
+								</dl>
+								<a href="#">자세히보기</a>
+							</li>
+							<li>
+								<img src="../Police/img/communication_bg1.png" alt="순직경찰관 추모">
+								<dl>
+									<dt>순직경찰관 추모</dt>
+									<dd><span class="word-break">당신을 영원히 기억하겠습니다<br>우리는 그들을 잊지 못합니다.</span></dd>
+								</dl>
+								<a href="#">자세히보기</a>
+							</li>
+							<li class="last">
+								<img src="../Police/img/communication_bg2.png" alt="적극행정 칭찬합니다">
+								<dl>
+									<dt>적극행정 칭찬합니다</dt>
+									<dd><span class="word-break">동료 경찰관에게 귀감이 될<br>모범 경찰관을 칭창해주세요.</span></dd>
+								</dl>
+								<a href="#">자세히보기</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row useful-info">
+				<div class="container1">
+					<div class="slick-track">
+						<a href="#" class="left-btn"></a>
+						<a href="#" class="right-btn"></a>
+						<ul>
+							<li><a href="#"><img src="./img/banner0201.jpg" alt="1"></a>
+								<div class="track1">
+									<dl>
+										<dt>'21년 호국보훈의 달</dt>
+										<dd>6.25전사경찰관 유가족 DNA 시료채취</dd>
+									</dl>
+								</div>
+							</li>
+							<li><a href="#"><img src="./img/banner0202.jpg" alt="2"></a>
+								<div class="track1">
+									<dl>
+										<dt>2021년 하반기부터 이렇게 달...</dt>
+										<dd>클릭하시면 이렇게 달라집니다 웹페이지로<br>이동합니다</dd>
+									</dl>
+								</div>
+							</li>
+							<li><a href="#"><img src="./img/banner0203.jpg" alt="3"></a>
+								<div class="track1">
+									<dl>
+										<dt>2021년 평화사랑 공모전</dt>
+										<dd>공모주제: 평화사랑과 애국심을 고취할 수 있는<br>공익적 내용</dd>
+									</dl>
+								</div>
+							</li>
+							<li><a href="#"><img src="./img/banner0204.jpg" alt="4"></a>
+								<div class="track1">
+									<dl>
+										<dt>경찰청 인권위원회에 오신걸 환...</dt>
+										<dd>클릭하시면 인사말,프로필,활동 소식 등을 확인하실<br>수 있습니다!</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+						<div class="slick-counter">
+							<button class="counterBtn" type="button">1/13</button>
+							<button class="playBtn" type="text"></button>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="row human-police">
+				<div class="container1">
+					<h2 class="left">
+						<span class="word">든든한 이웃경찰<br>당당한 책임경찰<br>따뜻한 공감경찰</span>
+					</h2>
+					<div class="slick">
+						<ul class="items">
+							<li>
+								<img class="first" src="../Police/img/banner0301.png" alt="민주인권민생경찰의 뿌리">
+								<dl>
+									<dt>민주ㆍ인원ㆍ민생경찰의 뿌리</dt>
+									<dd><span class="word-break">임시정부 경찰부터<br>돌립 구국 민주유공경찰까지</span></dd>
+								</dl>
+								<a href="#">자세히보기</a>
+							</li>
+							<li>
+								<img src="../Police/img/banner0302.png" alt="인권 경찰">
+								<dl>
+									<dt>인권 경찰</dt>
+									<dd><span class="word-break">인간으로서의 존엄과 가치와<br>인권을 존중하고 보호할 책임</span></dd>
+								</dl>
+								<a href="#">자세히보기</a>
+							</li>
+							<li class="last">
+								<img  class="third" src="../Police/img/banner0303.png" alt="수사구조개혁">
+								<dl>
+									<dt>수사구조개혁</dt>
+									<dd><span class="word-break">형사사법제도 견제와 균형<br>수사와 기소 분리가 해답</span></dd>
+								</dl>
+								<a href="#">자세히보기</a>
+							</li>
+							
+						</ul>
+					</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="row favorite-link">
+				<div class="container1">
+					<h4><span>자주찾는서비스</span></h4>
+					<div class="notice">
+						<div class="notice-wrap">
+							<ul class="notice-t cf">
+								<li class="notice-img"><a href="#">대면서비스</a> <span></span></li>
+								<li><a href="#">신고하기</a></li>
+								<li><a href="#">경찰 관련 정보</a></li>
+								<li><a href="#">직원전용</a></li>
+							</ul>
+							<div class="active-list">
+								<div class="list list1">
+									<a href="#" class="left-btn2"></a>
+									<a href="#" class="right-btn2"></a>
+									<ul>
+										<li><a href="#"><span>자유게시판</span></a></li>
+										<li><a href="#"><span>사이버안전지킴이</span></a></li>
+										<li><a href="#"><span>교통민원</span></a></li>
+										<li><a href="#"><span>아동,여성,청소년지원</span></a></li>
+										<li><a href="#"><span>법죄강력회보서발급</span></a></li>
+										<li><a href="#"><span>승진및채용</span></a></li>
+										<li><a href="#"><span>내사건검색</span></a></li>
+										<li><a href="#"><span>의무경찰지원접수</span></a></li>
+										<li><a href="#"><span>경찰박물관</span></a></li>
+									</ul>
+								</div>
+								<div class="list list2">
+									<ul>
+										<li><a href="#"><span>경찰민원포털</span></a></li>
+										<li><a href="#"><span>가정,학교,성폭력등신고/상담</span></a></li>
+										<li><a href="#"><span>스마트 국민제보</span></a></li>
+										<li><a href="#"><span>유실물통합포털</span></a></li>
+										<li><a href="#"><span>안전신문고</span></a></li>
+									</ul>
+								</div>
+								<div class="list list3">
+									<ul>
+										<li><a href="#"><span>세입세출현황</span></a></li>
+										<li><a href="#"><span>추진과제</span></a></li>
+										<li><a href="#"><span>감시결과</span></a></li>
+									</ul>
+								</div>
+								<div class="list list4">
+									<ul>
+										<li><a href="#"><span>경찰공제회</span></a></li>
+										<li><a href="#"><span>경찰복지포털</span></a></li>
+										<li><a href="#"><span>경찰 전자우편</span></a></li>
+										<li><a href="#"><span>자료이동 서비스</span></a></li>
+										<li><a href="#"><span>내부비리신고</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div id="row">
+			<div class="row open-admin">
+				<div class="container1">
+					<h3>국민을 향한 열린 행정</h3>
+					<p>경찰의 다양한 소식과 정보를 전하며 국민을 향한 열린 행정을 위해 노력합니다.</p>
+					<div class="tab1">
+						<h4 class="ir_so">텝 메뉴</h4>
+						<ul>
+							<li class="active1"><a href="#">공지사항</a>
+								<ul>
+									<li><a href="#">치안정책리뷰 제72호 발간 알림</a><span>2021-09-06</span></li>
+									<li><a href="#">치안정책연구 제35권 제4호 논문 모집 공고</a><span>2021-09-02</span></li>
+									<li><a href="#">숨겨진 불법무기류, 지금 신고하세요</a><span>2021-09-01</span></li>
+									<li><a href="#">제76주년 경찰의 날 정부포상 후보자 공개검증 알림</a><span>2021-08-17</span></li>
+								</ul>
+							</li>
+							<li><a href="#">채용공고</a>
+								<ul>
+									<li><a href="#">2021년 제2회 경찰청 일반직공무원 경력경쟁채용시험 공고</a><span>2021-09-13</span></li>
+									<li><a href="#">경찰대학 전문경력인사 초빙활용지원사업 대상자 선정</a><span>2021-09-03</span></li>
+									<li><a href="#">경찰청 경찰박물관 기간제근로자(학예업무 보조) 채용 최종합격자 공고</a><span>2021-08-13</span></li>
+									<li><a href="#">경찰공제회 (주)폴에이산업 대표이사 초빙공고(초가)</a><span>2021-08-12</span></li>
+								</ul>
+							</li>
+							<li><a href="#">입찰공고</a>
+								<ul>
+									<li><a href="#">경찰청 치안분야 국가연구개발사업 위탁정산수행기관 모집 공고</a><span>2020-12-10</span></li>
+									<li><a href="#">경찰청 구내식당 부식납품희망업체 서류심사 결과 공고</a><span>2019-10-18</span></li>
+									<li><a href="#">제3차 어린이집 임대형민간투자사업(BTL) 1단계PQ 심사결과 공지</a><span>2019-10-14</span></li>
+									<li><a href="#">경찰청 복지관 구내식당 식재료 납품희망업체 모집 공고</a><span>2019-10-08</span></li>
+								</ul>
+								<a href="#" class="more1 ir_pm" title="더보기">더보기</a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab2">
+						<h4 class="ir_so">텝 메뉴</h4>
+						<ul>
+							<li class="active1"><a href="#">보도자료</a>
+								<ul>
+									<li><a href="#">경찰청,인도네시아 고위경찰 대상 한국 경찰 시스템 비대면 전수</a><span>2021-09-14</span></li>
+									<li><a href="#">추석 명절,선물 배송 등을 사칭한 문자결제사기(스미싱) 주의!(공동보도)</a><span>2021-09-14</span></li>
+									<li><a href="#">학교폭력 없는 안전한 학교 만들기 위한 협력 강화(공동보도)</a><span>2021-09-14</span></li>
+									<li><a href="#">국제경찰장협회(IACP)에서 한국 경찰의 우수성 전 세계에 전파</a><span>2021-09-09</span></li>
+								</ul>
+							</li>
+							<li><a href="#">사실확인</a>
+								<ul>
+									<li><a href="#">YTN"두 살배기 8차로 한복판 방치했는데...일주일째 입건도 안 한 경찰" 보도 관련, 사실은 이렇습니다.</a><span>2021-03-29</span></li>
+									<li><a href="#">"분당, 여자화장실 침입과 도촬(?)에 대해 알리고자 합니다" 게시글 관련,사실은 이렇습니다.</a><span>2020-12-03</span></li>
+									<li><a href="#">경찰청 사칭 가짜메세지 관련,사실은 이렇습니다!</a><span>2020-07-17</span></li>
+									<li><a href="#">"싸움 말리려 출동한 경찰, 되려 여성 목격자 바닥에 내리꽂아" 보도 관련, 사실은 이렇습니다.</a><span>2020-01-24</span></li>
+								</ul>
+							</li>							
+						</ul>
+						<a href="#" class="more1 ir_pm" title="더보기">더보기</a>
+					</div>
+					<div class="hover1">
+						<ul>
+							<li>
+								<a href="#">
+									<span><img src="../police/img/dc698840-ab94-48f0-8e06-9bab9f67206f.jpg" alt="한국마약범죄경찰의역활과미래"></span>
+								</a>
+								<strong>2020 한국 마약 범죄 경찰의 역할과 미래</strong>
+								<a href="#" class="playBtn2 ir_pm" title=재생,일시정지>재생,일시정지</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="link">
+			<div class="container1">
+				<div class="dropup">
+					<ul class="drop-btn">
+						<li><a href="#">부서별 누리집</a></li>
+					</ul>
+					<ul class="drop-btn">
+						<li><a href="#">시 도 경찰청 누리집</a></li>
+					</ul>
+					<ul class="drop-btn">
+						<li><a href="#">부속기관 누리집</a></li>
+					</ul>
+					<ul class="drop-btn">
+						<li><a href="#">연계기관 누리집</a></li>
+					</ul>
+					<a href="#" class="top ir_pm" title="맨위로">맨위로</a>
+			</div>
+		</div>
+		<div id="footermenu">
+			<div class="container1">
+				<div class="row footer-menu">
+					<ul class="user-menu">
+						<li><a href="#">개인정보처리방침</a></li>
+						<li><a href="#">저작권 정책</a></li>
+						<li><a href="#">공공데이터 이용정책</a></li>
+						<li><a href="#">문서 보기 프로그램 내려받기</a></li>
+						<li><a href="#">이용안내</a></li>
+						<li><a href="#">정부·지자체 조직도</a></li>
+					</ul>
+					<ul class="sns-menu">
+						<li class="youtube"><a href="#" title="새창열림" target="_blank"></a></li>
+						<li class="facebook"><a href="#" title="새창열림" target="_blank"></a></li>
+						<li class="twitter"><a href="#" title="새창열림" target="_blank"></a></li>
+						<li class="blog"><a href="#" title="새창열림" target="_blank"></a></li>
+						<li class="instagram"><a href="#" title="새창열림" target="_blank"></a></li>
+						<li class="band"><a href="#" title="새창열림" target="_blank"></a></li>
+						<li class="kakao"><a href="#" title="새창열림" target="_blank"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footerinfo">
+			<div class="row footer-info">
+				<div class="container1">
+					<div class="pull-left1">
+						<dis class="symbol ir_pm" >경찰청</dis>
+					</div>
+					<div class="pull-left2">
+						<div class="address">
+							<ul>
+								<li>(우)03739 서울특별시 서대문구 통일로 97</li>
+								<li>민원대표전화 182(유료)</li>
+								<li><a href="#">찾아오시는길</a></li>
+							</ul>
+						</div>
+						<div class="copyright">
+							<span>Copyright©2018 National Police Agency</span>
+						</div>
+						<div class="notice">
+							<span>본 홈페이지에 게시판 이메일 주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</span>
+						</div>
+					</div>
+					<div class="pull-right">
+						<div class="certification-mark">
+							<a href="#" class="web-watch" targer="_blank" title="국가공인 인증기관"><img src="../police/img/footer_webwatch.png" alt="국가공인인증기관"></a>
+							<a href="#" class="e-privacy" target="_blank" title="개인정보보호우수사이트"><img src="../police/img/footer_eprivacy.png" alt="개인정보보호우수사이트"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
